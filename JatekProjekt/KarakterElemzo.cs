@@ -19,31 +19,43 @@ namespace JatekProjekt
 
         public List<string> MagasSzintuKarakterek()
         {
-            throw new NotImplementedException();
-        }
+            //throw new NotImplementedException();
+            var lista = karakterek.Where(k => k.Szint > 70).Select(k => k.Nev).ToList();
+			return lista;
+
+		}
 
         // Gyűjtsd ki az összes "Mágus" osztályú karakter nevét!
         public List<string> MagusOsztalyuNevek()
         {
-            throw new NotImplementedException();
-        }
+			//throw new NotImplementedException();
+			var lista = karakterek.Where(k => k.Osztaly == "Mágus").Select(k => k.Nev).ToList();
+			return lista;
+
+		}
 
         // Add vissza az összes karakter nevét egy egyszerű listában!
         public List<string> OsszesKarakterNevListaba()
         {
-            throw new NotImplementedException();
-        }
+			//throw new NotImplementedException();
+			var lista = karakterek.Select(k => k.Nev).ToList();
+			return lista;
+		}
 
         // Szűrd ki azokat a karaktereket, amelyek valamelyik "EU-"-val kezdődő szerveren játszanak, és add vissza a nevüket listában!
         public List<string> EuSzerveresKarakterek()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            var lista = karakterek.Where(k => k.Szerver.StartsWith("EU-")).Select(k => k.Nev).ToList();
+            return lista;
         }
 
         // Válaszd ki az összes egyedi (különböző) szervernevet, ahol a karakterek játszanak (Distinct segítségével)!
         public List<string> EgyediSzerverNevek()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            var lista = karakterek.Select(k => k.Szerver).Distinct().ToList();
+            return lista;
         }
 
 
